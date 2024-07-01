@@ -1,0 +1,42 @@
+.window {
+  background: #DAD8EA;
+  padding: 2px;
+  border-left: 1.5px solid #000;
+  border-top: 1.5px solid #000;
+  border-right: 1.5px solid #DAD8EA;
+  border-bottom: 1.5px solid #DAD8EA;
+  max-width: max-content;
+}
+
+header {
+  background: #226C64;
+  padding: 4px 2px;
+}
+
+h5 {
+  color: #F0EFF6;
+  font-weight: 300;
+}
+
+a {
+  color: #232323;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.container-window {
+  display: flex;
+  background: #EFEDFF;
+  border: 1.5px solid #232323;
+  padding: .75rem 1rem .75rem .5rem;
+  gap: 1rem;
+}
+
+
+
+
+
+

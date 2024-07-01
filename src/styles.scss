@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VT323', sans-serif;
+}
+
+html {
+  @media screen and (max-width: 952px) {
+    font-size: 14px;
+  }
+}
+
+
+
+.container {
+  max-width: 928px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 952px) {
+    padding: 0 12px;
+  }
+}
