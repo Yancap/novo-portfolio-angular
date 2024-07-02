@@ -2,8 +2,46 @@
   <div class="titulo-section">
     <h2>Experiencias</h2>
   </div>
-  <div>
-    
+  <div
+    class="experiencias-container"
+    *ngIf="experienciasSubject | async as experiencias"
+  >
+    @for (experiencia of experiencias; track experiencia; let idEmpresa =
+    $index) {
+    <div>
+      <div>
+        <h4 [class.active]="idEmpresa === empresaSelecionada">
+          {{ experiencia.empresa }}
+        </h4>
+        <ul>
+          @for (cargo of experiencia.cargos; track cargo; let idCargo = $index)
+          {
+          <li
+            [class.active]="
+              idEmpresa === empresaSelecionada && idCargo === cargoSelecionado
+            "
+            (click)="selecionarCargo(idEmpresa, idCargo)"
+          >
+            {{ cargo.cargo }}
+          </li>
+          }
+        </ul>
+      </div>
+      <div></div>
+    </div>
+    }
+    <!-- <div *ngFor="let experiencia of experiencias">
+      <div>
+        <h4 [class.active]="active">
+          {{ experiencia.empresa }}
+        </h4>
+        <ul>
+          @for (cargo of experiencia.cargos; track $index) {
+          <li>{{ cargo.cargo }}</li>
+          }
+        </ul>
+      </div>
+      <div></div>
+    </div> -->
   </div>
 </section>
-

@@ -1,0 +1,36 @@
+section {
+  padding: 2rem 0;
+}
+
+.experiencias-container {
+  padding: 1rem;
+  background: #12363f;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #226C64;
+  &.active {
+    color: #4dfead;
+  }
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+li {
+  font-size: 1rem;
+  cursor: pointer;
+  color: #226C64;
+  &.active {
+    color: #4dfead;
+  }
+  &:hover {
+    color: #4dfead;
+  }
+}
