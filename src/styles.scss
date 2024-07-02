@@ -13,7 +13,18 @@ html {
   }
 }
 
+.titulo-section {
+  background: #287F6D;
+  padding: .5rem 1rem;
+  width: max-content;
+  h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #4DFEAD;
 
+  }
+}
 
 .container {
   max-width: 928px;

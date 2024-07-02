@@ -1,0 +1,14 @@
+<section>
+  <div class="titulo-section">
+    <h2>Conhecimentos Técnicos</h2>
+  </div>
+  <div class="container-tech">
+    <div
+      class="tech-chip"
+      *ngFor="let tecnologia of tecnologiasSubject | async as list"
+    >
+      <img src="/assets/techs/{{ tecnologia.icon }}.svg" alt="" />
+      <span>{{ tecnologia.tech }}</span>
+    </div>
+  </div>
+</section>
