@@ -7,7 +7,8 @@
       class="tech-chip"
       *ngFor="let tecnologia of tecnologiasSubject | async as list"
     >
-      <img src="/assets/techs/{{ tecnologia.icon }}.svg" alt="" />
+      <app-icon [icon]="tecnologia.icon"/>
+      <!-- <img src="/assets/techs/{{ tecnologia.icon }}.svg" alt="" /> -->
       <span>{{ tecnologia.tech }}</span>
     </div>
   </div>

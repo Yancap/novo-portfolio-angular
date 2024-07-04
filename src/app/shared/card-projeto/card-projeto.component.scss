@@ -1,0 +1,50 @@
+.card {
+  background: #12363F;
+  padding: 1rem;
+  border: 2px solid #4DFEAD ;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 356px;
+}
+
+.image {
+  width: 100%;
+  height: 12rem;
+  background: red;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #4DFEAD;
+}
+
+p {
+  color: #ADAAC6;
+}
+
+.card::ng-deep {
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
+}
+
+.techs {
+  margin-top: .5rem;
+  display: flex;
+  gap: .75rem;
+}

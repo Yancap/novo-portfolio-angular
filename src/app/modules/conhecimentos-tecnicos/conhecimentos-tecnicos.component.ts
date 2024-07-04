@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PrismicService } from '../../core/services/prismic.service';
 import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../shared/icon/icon.component';
 
 @Component({
   selector: 'app-conhecimentos-tecnicos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './conhecimentos-tecnicos.component.html',
   styleUrl: './conhecimentos-tecnicos.component.scss',
 })

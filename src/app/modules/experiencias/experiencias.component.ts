@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PrismicService } from '../../core/services/prismic.service';
 import { ReplaySubject } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../shared/icon/icon.component';
 
 @Component({
   selector: 'app-experiencias',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './experiencias.component.html',
   styleUrl: './experiencias.component.scss',
 })

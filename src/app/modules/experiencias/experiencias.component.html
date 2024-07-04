@@ -8,8 +8,8 @@
   >
     @for (experiencia of experiencias; track experiencia; let idEmpresa =
     $index) {
-    <div>
-      <div>
+    <div >
+      <div class="container-empregos">
         <h4 [class.active]="idEmpresa === empresaSelecionada">
           {{ experiencia.empresa }}
         </h4>
@@ -27,7 +27,33 @@
           }
         </ul>
       </div>
-      <div></div>
+      <div class="container-cargo">
+        <h5>
+          {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].cargo }}
+          •
+          {{ experiencias[empresaSelecionada].empresa }}
+        </h5>
+        <span>
+          {{
+            experiencias[empresaSelecionada].cargos[cargoSelecionado].datainicio
+              | date: 'MMM yyyy'
+          }}
+          -
+          @if (experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal)  {
+            {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal | date: 'MMM yyyy' }}
+          } @else {
+            {{ "Atualmente" }}
+          }
+        </span>
+        <p>
+          {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].descricao }}
+        </p>
+        <div class="techs">
+          @for (icon of experiencias[empresaSelecionada].cargos[cargoSelecionado].tecnologias.split(';'); track $index) {
+            <app-icon [icon]="icon"/>
+          }
+        </div>
+      </div>
     </div>
     }
     <!-- <div *ngFor="let experiencia of experiencias">

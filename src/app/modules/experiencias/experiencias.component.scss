@@ -10,10 +10,23 @@ section {
   gap: 1.25rem;
 }
 
+.experiencias-container > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  @media screen and (max-width: 715px) {
+    flex-direction: column;
+    gap: 4rem;
+    .container-empregos, .container-cargo {
+      width: inherit;
+    }
+  }
+}
+
 h4 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 300;
-  color: #226C64;
+  color: #226c64;
   &.active {
     color: #4dfead;
   }
@@ -24,9 +37,9 @@ ul {
 }
 
 li {
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  color: #226C64;
+  color: #226c64;
   &.active {
     color: #4dfead;
   }
@@ -34,3 +47,47 @@ li {
     color: #4dfead;
   }
 }
+.container-empregos {
+  flex-shrink: 1;
+  width: 40%;
+}
+.container-cargo {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  flex-shrink: 2;
+
+  h5 {
+    font-size: 1.5rem;
+    color: #DAD8EA;
+    font-weight: 300;
+  }
+  span {
+    color: #615D73;
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    color: #ADAAC6;
+  }
+
+  .techs {
+    display: flex;
+    gap: .5rem;
+    padding: .5rem 0;
+  }
+}
+.container-cargo::ng-deep {
+  app-icon {
+    svg {
+      height: 1.25rem;
+      width: auto;
+    }
+    path {
+      fill: #615d73;
+    }
+  }
+}
+
+
