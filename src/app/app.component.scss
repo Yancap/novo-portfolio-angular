@@ -10,7 +10,7 @@ nav {
   align-items: center;
 }
 
-a {
+div.container a {
   text-decoration: none;
   &:hover {
     font-weight: 800;
@@ -48,6 +48,7 @@ div.container {
 main {
   background: #434050;
   min-height: 100vh;
+  padding: 4rem 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -56,5 +57,45 @@ main {
   }
   h2 {
     font-size: 1.25rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 33.333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem ;
+    color: #F7F6FF;
+    text-decoration: none;
+    font-size: 1.2rem;
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+
+  .github {
+    background: #4F4F4F;
+    &:hover {
+      background: #424242;
+    }
+  }
+  .linkedin {
+    background: #75BDFF;
+    &:hover {
+      background: #5fa5e7;
+    }
+  }
+  .cv {
+    background: #FF5151;
+    &:hover {
+      background: #eb4343;
+    }
   }
 }

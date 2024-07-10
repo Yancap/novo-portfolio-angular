@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -9,5 +9,5 @@ import { IconComponent } from '../icon/icon.component';
   styleUrl: './card-projeto.component.scss'
 })
 export class CardProjetoComponent {
-
+  @Input() projeto!: IProjeto;
 }

@@ -23,7 +23,6 @@ export class ExperienciasComponent implements OnInit {
       'experiences',
       { fetch: [], pageSize: 50 }
     )) as unknown as IRespostaExperiencias[];
-    console.log(response);
     const experienciasOrdenadas = response
       .map((res) => res.data)
       .sort((a, b) => {

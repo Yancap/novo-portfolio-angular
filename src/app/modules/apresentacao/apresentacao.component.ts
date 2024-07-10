@@ -21,7 +21,6 @@ export class ApresentacaoComponent implements OnInit {
       'apresentacao',
       { fetch: [], pageSize: 50 }
     )) as unknown as IRespostaApresentacao[];
-    console.log(response);
     const titulo = this._elementRef.nativeElement.querySelector('h1');
     const descricao =
       this._elementRef.nativeElement.querySelector('p.descricao');

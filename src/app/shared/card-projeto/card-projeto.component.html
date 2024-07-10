@@ -1,19 +1,21 @@
 <div class="card">
   <div class="image">
-    <img src="/assets/dinossauros.jpg" alt="" />
+    <img [src]="projeto.imagem.url" alt="" />
   </div>
   <article>
-    <h6>Projeto de site de um exemplo</h6>
+    <h6>{{ projeto.titulo }}</h6>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-      maximus, justo at sagittis imperdiet, justo ipsum maximus lectus, ut
-      blandit leo augue ac tellus. Ut ultrices scelerisque pulvinar. Nunc
-      laoreet turpis turpis, sit amet sagittis
+      {{ projeto.descricao }}
     </p>
     <div class="techs">
-      <app-icon icon="angular"/>
-      <app-icon icon="typescript"/>
+      @for (tecnologia of projeto.tecnologias.split(';'); track $index) {
+        <app-icon [icon]="tecnologia"/>
+
+      }
     </div>
   </article>
-  <footer></footer>
+  <footer>
+    @if (projeto.url) { <a [href]="projeto.url" target="_blank">Acessar</a> }
+    @if (projeto.github) { <a [href]="projeto.github" target="_blank">Github</a> }
+  </footer>
 </div>
