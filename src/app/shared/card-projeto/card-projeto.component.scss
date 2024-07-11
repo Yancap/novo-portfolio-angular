@@ -23,6 +23,12 @@
   }
 }
 
+.card::ng-deep {
+  path {
+    fill: #4DFEAD;
+  }
+}
+
 .image {
   width: 100%;
   height: 12rem;
