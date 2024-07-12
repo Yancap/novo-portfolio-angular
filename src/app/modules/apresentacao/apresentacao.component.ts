@@ -3,15 +3,17 @@ import { JanelaRedesComponent } from '../../shared/janela-redes/janela-redes.com
 import { JanelaCertificacoesComponent } from '../../shared/janela-certificacoes/janela-certificacoes.component';
 import { PrismicService } from '../../core/services/prismic.service';
 import { RichText } from 'prismic-dom';
+import { CardComponent } from '../../shared/card/card.component';
 
 @Component({
   selector: 'app-apresentacao',
   standalone: true,
-  imports: [JanelaRedesComponent, JanelaCertificacoesComponent],
+  imports: [JanelaRedesComponent, CardComponent],
   templateUrl: './apresentacao.component.html',
   styleUrl: './apresentacao.component.scss',
 })
 export class ApresentacaoComponent implements OnInit {
+  public listaFormacoes: {tags: string[], titulo: string, descricao: string}[] = [];
   constructor(
     private prismicService: PrismicService,
     private _elementRef: ElementRef<HTMLElement>
@@ -24,17 +26,21 @@ export class ApresentacaoComponent implements OnInit {
     const titulo = this._elementRef.nativeElement.querySelector('h1');
     const descricao =
       this._elementRef.nativeElement.querySelector('p.descricao');
-    const listaFormacoes =
-      this._elementRef.nativeElement.querySelector('ul.formacoes');
     if (titulo) titulo.innerHTML = RichText.asHtml(response.data.titulo);
     if (descricao)
       descricao.innerHTML = RichText.asHtml(response.data.descricao);
-    if (listaFormacoes)
-      response.data.formacoesacademicas
-        .forEach((formacoes) => {
-          listaFormacoes.innerHTML += `<li>${RichText.asHtml(
-            formacoes.formacaoacademica
-          )}</li>`;
+    console.log(response.data.formacoesacademicas);
+
+    this.listaFormacoes = response.data.formacoesacademicas
+        .map((formacoes) => {
+          return {
+            titulo: formacoes.formacaoacademica[0].text,
+            descricao: formacoes.formacaoacademica[1].text,
+            tags: [
+              formacoes.formacaoacademica[2].text,
+              formacoes.formacaoacademica[2].text.includes("Atualmente") ? 'Em andamento' : 'Concluido'
+            ]
+          }
         });
   }
 }

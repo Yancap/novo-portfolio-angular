@@ -1,73 +1,61 @@
 <section>
-  <div class="titulo-section">
-    <h2>Experiencias</h2>
-  </div>
-  <div
-    class="experiencias-container"
-    *ngIf="experienciasSubject | async as experiencias"
-  >
-    @for (experiencia of experiencias; track experiencia; let idEmpresa =
-    $index) {
-    <div >
-      <div class="container-empregos">
-        <h4 [class.active]="idEmpresa === empresaSelecionada">
-          {{ experiencia.empresa }}
-        </h4>
-        <ul>
-          @for (cargo of experiencia.cargos; track cargo; let idCargo = $index)
-          {
-          <li
-            [class.active]="
-              idEmpresa === empresaSelecionada && idCargo === cargoSelecionado
-            "
-            (click)="selecionarCargo(idEmpresa, idCargo)"
-          >
-            {{ cargo.cargo }}
-          </li>
-          }
-        </ul>
-      </div>
-      <div class="container-cargo">
-        <h5>
-          {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].cargo }}
-          •
-          {{ experiencias[empresaSelecionada].empresa }}
-        </h5>
-        <span>
-          {{
-            experiencias[empresaSelecionada].cargos[cargoSelecionado].datainicio
-              | date: 'MMM yyyy'
-          }}
-          -
-          @if (experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal)  {
-            {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal | date: 'MMM yyyy' }}
-          } @else {
-            {{ "Atualmente" }}
-          }
-        </span>
-        <p>
-          {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].descricao }}
-        </p>
-        <div class="techs">
-          @for (icon of experiencias[empresaSelecionada].cargos[cargoSelecionado].tecnologias.split(';'); track $index) {
-            <app-icon [icon]="icon"/>
-          }
+  <div class="container">
+    <h2 class="titulo-section">Minhas Carreiras</h2>
+    <div
+      class="experiencias-container"
+      *ngIf="experienciasSubject | async as experiencias"
+    >
+      @for (experiencia of experiencias; track experiencia; let idEmpresa =
+      $index) {
+      <div>
+        <div class="container-empregos">
+          <h4 [class.active]="idEmpresa === empresaSelecionada">
+            {{ experiencia.empresa }}
+          </h4>
+          <ul>
+            @for (cargo of experiencia.cargos; track cargo; let idCargo = $index)
+            {
+            <li
+              [class.active]="
+                idEmpresa === empresaSelecionada && idCargo === cargoSelecionado
+              "
+              (click)="selecionarCargo(idEmpresa, idCargo)"
+            >
+              {{ cargo.cargo }}
+            </li>
+            }
+          </ul>
+        </div>
+        <div class="container-cargo">
+          <h5>
+            {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].cargo }}
+            •
+            {{ experiencias[empresaSelecionada].empresa }}
+          </h5>
+          <span>
+            {{
+              experiencias[empresaSelecionada].cargos[cargoSelecionado].datainicio
+                | date: 'MMM yyyy'
+            }}
+            -
+            @if (experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal)  {
+              {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].datafinal | date: 'MMM yyyy' }}
+            } @else {
+              {{ "Atualmente" }}
+            }
+          </span>
+          <p>
+            {{ experiencias[empresaSelecionada].cargos[cargoSelecionado].descricao }}
+          </p>
+          <div class="techs">
+            @for (icon of experiencias[empresaSelecionada].cargos[cargoSelecionado].tecnologias.split(';'); track $index) {
+              <app-icon [icon]="icon"/>
+            }
+          </div>
         </div>
       </div>
+      }
     </div>
-    }
-    <!-- <div *ngFor="let experiencia of experiencias">
-      <div>
-        <h4 [class.active]="active">
-          {{ experiencia.empresa }}
-        </h4>
-        <ul>
-          @for (cargo of experiencia.cargos; track $index) {
-          <li>{{ cargo.cargo }}</li>
-          }
-        </ul>
-      </div>
-      <div></div>
-    </div> -->
+
   </div>
 </section>

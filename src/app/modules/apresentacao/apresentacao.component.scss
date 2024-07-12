@@ -1,9 +1,10 @@
 section {
-  padding: 3rem 0 2rem;
+  padding: 6rem 0;
+  background: #2B2837;
   display: flex;
   gap: 1rem;
   @media screen and (max-width: 640px) {
-    padding: 2rem 0;
+    padding: 4rem 0;
     flex-direction: column;
   }
 }
@@ -23,6 +24,85 @@ article {
   }
 }
 
+
+div.sobre-mim {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  h4 {
+    font-weight: 300;
+    color: #4dfead;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h6 {
+    font-weight: 300;
+    color: #dad8ea;
+    font-size: 24px;
+    margin-bottom: .5rem;
+  }
+
+  picture {
+    background: #000;
+    width: 480px;
+    height: 316px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+}
+
+div.certificacoes {
+  margin-top: 2rem;
+  > div {
+    display: flex;flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
+
+div.contatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    text-decoration: none;
+    background: #262233;
+    border: 1px solid #434050;
+    color: #4dfead;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 843px) {
+  div.sobre-mim {
+    margin-top: 4rem;
+    picture {
+      display: none;
+    }
+  }
+  div.contatos {
+    margin-top: 4rem;
+  }
+}
+
 ::ng-deep {
   h1 {
     font-weight: 300;
@@ -34,34 +114,35 @@ article {
     }
   }
   p.descricao {
-    color: #dad8ea;
-    font-size: 1rem;
+    color: #b7b2d6;
+    font-size: 1.2rem;
+    line-break: normal;
   }
 
-  ul.formacoes {
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    p {
-      color: #dad8ea;
-      font-size: 1rem;
-    }
-    li {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      gap: 0.2rem;
-    }
-    h4 {
-      color: #4dfead;
+  div.formacoes {
+    margin-top: 4rem;
+    h2 {
+      font-size: 2.5rem;
       font-weight: 300;
-      font-size: 1.25rem;
+      color: #DAD8EA;
+      margin-bottom: 1rem;
     }
-    em {
-      font-style: normal;
-      color: #615d73;
+    > div {
+      padding: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      &::ng-deep {
+        app-card {
+          max-width: 356px;
+          @media screen and (max-width: 764px) {
+            max-width: initial;
+          }
+        }
+      }
+      @media screen and (max-width: 764px) {
+        flex-direction: column;
+      }
     }
   }
 }

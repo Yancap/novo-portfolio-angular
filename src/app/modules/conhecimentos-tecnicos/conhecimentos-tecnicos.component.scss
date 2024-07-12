@@ -1,39 +1,44 @@
 section {
-  padding: 4rem 0;
+  padding: 6rem 0 8rem;
 }
 
 .container-tech {
-  background: #287F6D;
-  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: .75rem;
   flex-wrap: wrap;
+  @media screen and (max-width: 350px) {
+    justify-content: space-between;
+  }
 }
 
 .tech-chip {
   border-radius: .5rem;
-  background: #226C64;
+  background: #393649;
   padding: .5rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  //flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
   gap: .5rem;
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
 
-  img {
-    width: 100%;
-    height: auto;
-    max-height: 2rem;
-    max-width: 2rem;
+  &::ng-deep {
+    app-icon svg {
+      width: 3rem;
+      height: auto;
+      max-height: 3.5rem;
+    }
   }
 
   span {
+    display: inline-block;
+    width: 100%;
     color: #4DFEAD;
     text-transform: uppercase;
-    font-size: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
   }
 }

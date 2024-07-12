@@ -1,16 +1,19 @@
-<section>
-  <h2>Meus projetos</h2>
-  <div class="container-projetos">
-    <div class="left" (click)="selecionarEsquerda()">
-      <img src="/assets/click-me.gif" alt="" srcset="">
+<section >
+  <div class="container">
+    <h2 class="titulo-section">MEUS PROJETOS PESSOAIS</h2>
+    <div class="container-projetos">
+      <div class="left" (click)="selecionarEsquerda()">
+        <img src="/assets/click-me.gif" alt="" srcset="">
+      </div>
+      <div class="projetos">
+        @for (item of arrayProjetoSelecionados; track $index) {
+          <app-card-projeto [projeto]="item"/>
+        }
+      </div>
+      <div class="right" (click)="selecionarDireita()">
+        <img src="/assets/click-me.gif" alt="" srcset="">
+      </div>
     </div>
-    <div class="projetos">
-      @for (item of arrayProjetoSelecionados; track $index) {
-        <app-card-projeto [projeto]="item"/>
-      }
-    </div>
-    <div class="right" (click)="selecionarDireita()">
-      <img src="/assets/click-me.gif" alt="" srcset="">
-    </div>
+
   </div>
 </section>

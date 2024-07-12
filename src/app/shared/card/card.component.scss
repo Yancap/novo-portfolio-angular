@@ -1,0 +1,55 @@
+.card {
+  background: #12363F;
+  padding: 1rem;
+  border: 2px solid #4DFEAD ;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  // max-width: 356px;
+  // @media screen and (max-width: 550px) {
+  //   max-width: 260px;
+  // }
+  // @media screen and (max-width: 400px) {
+  //   max-width: 200px;
+  // }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+
+  .tag {
+    background: #07443A;
+    border-radius: .25rem;
+    padding: .15rem .5rem;
+    color: #4DFEAD;
+    text-transform: capitalize;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #4DFEAD;
+}
+
+p {
+  color: #DAD8EA;
+  font-size: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+
