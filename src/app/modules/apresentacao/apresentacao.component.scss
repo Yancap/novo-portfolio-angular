@@ -46,11 +46,14 @@ div.sobre-mim {
   }
 
   picture {
-    background: #000;
     width: 480px;
-    height: 316px;
     flex-grow: 0;
     flex-shrink: 0;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   .content {
@@ -113,10 +116,16 @@ div.contatos {
       color: #4dfead;
     }
   }
-  p.descricao {
+  div.descricao {
     color: #b7b2d6;
     font-size: 1.2rem;
     line-break: normal;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    p {
+      line-height: 1.2rem;
+    }
   }
 
   div.formacoes {

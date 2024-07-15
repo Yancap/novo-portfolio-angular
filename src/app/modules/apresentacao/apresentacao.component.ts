@@ -14,6 +14,7 @@ import { CardComponent } from '../../shared/card/card.component';
 })
 export class ApresentacaoComponent implements OnInit {
   public listaFormacoes: {tags: string[], titulo: string, descricao: string}[] = [];
+  public ocupacaoAtual!: string;
   constructor(
     private prismicService: PrismicService,
     private _elementRef: ElementRef<HTMLElement>
@@ -25,12 +26,12 @@ export class ApresentacaoComponent implements OnInit {
     )) as unknown as IRespostaApresentacao[];
     const titulo = this._elementRef.nativeElement.querySelector('h1');
     const descricao =
-      this._elementRef.nativeElement.querySelector('p.descricao');
+      this._elementRef.nativeElement.querySelector('div.descricao');
     if (titulo) titulo.innerHTML = RichText.asHtml(response.data.titulo);
     if (descricao)
       descricao.innerHTML = RichText.asHtml(response.data.descricao);
-    console.log(response.data.formacoesacademicas);
 
+    this.ocupacaoAtual = response.data.ocupacao_atual;
     this.listaFormacoes = response.data.formacoesacademicas
         .map((formacoes) => {
           return {

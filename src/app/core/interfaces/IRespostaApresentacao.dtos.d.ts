@@ -5,6 +5,7 @@ declare interface IRespostaApresentacao extends IRespostaPrismic {
 declare interface IApresentacao {
   titulo: IRichText[];
   descricao: IRichText[];
+  ocupacao_atual : string;
   formacoesacademicas: {
     formacaoacademica: IRichText[];
   }[];
