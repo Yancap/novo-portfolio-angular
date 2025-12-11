@@ -1,13 +1,13 @@
 <div class="card">
   <div class="tags">
-    @for (tag of tags; track $index) {
-      <div class="tag">
-        {{tag}}
-      </div>
+    @for (tag of data.tags; track $index) {
+    <div class="tag">
+      {{ tag }}
+    </div>
     }
   </div>
   <article>
-    <h6>{{titulo}}</h6>
-    <p>{{descricao}}</p>
+    <h6>{{ data.title }}</h6>
+    <p>{{ data.description }}</p>
   </article>
 </div>

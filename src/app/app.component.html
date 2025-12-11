@@ -1,32 +1,81 @@
 <header>
   <div class="container">
-    <h2>
-      YAN PORTFOLIO
-    </h2>
-    <nav>
-      <a href="#experiencias">Experiencias</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-    </nav>
-    <div class="relogio">
-      <time datetime="">12:30</time>
-    </div>
+    <app-svg name="menu" class="menu" (click)="toggleMenu()" />
   </div>
 </header>
+<nav [class.open]="menuIsOpen">
+  <div class="bg-menu">
+    <div class="return-menu">
+      <app-svg name="arrow-left" (click)="toggleMenu()" />
+      <!-- (click)="toggleMenu(false)"  -->
+    </div>
+    <ul>
+      <li [class.active]="tabMenuSelected === 'presentation'">
+        <app-svg
+          name="{{
+            tabMenuSelected === 'presentation' ? 'arrow-select' : 'star'
+          }}"
+        />
+        <a href="#presentation" (click)="toggleMenu()">Inicio</a>
+      </li>
+
+      <li [class.active]="tabMenuSelected === 'about'">
+        <app-svg
+          name="{{ tabMenuSelected === 'about' ? 'arrow-select' : 'star' }}"
+        />
+        <a href="#about" (click)="toggleMenu()">Sobre mim</a>
+      </li>
+
+      <li [class.active]="tabMenuSelected === 'functions'">
+        <app-svg
+          name="{{ tabMenuSelected === 'functions' ? 'arrow-select' : 'star' }}"
+        />
+        <a href="#functions" (click)="toggleMenu()">Principais Funções</a>
+      </li>
+
+      <li [class.active]="tabMenuSelected === 'career'">
+        <app-svg
+          name="{{ tabMenuSelected === 'career' ? 'arrow-select' : 'star' }}"
+        />
+        <a href="#career" (click)="toggleMenu()">Carreira Profissional</a>
+      </li>
+
+      <li [class.active]="tabMenuSelected === 'techniques'">
+        <app-svg
+          name="{{
+            tabMenuSelected === 'techniques' ? 'arrow-select' : 'star'
+          }}"
+        />
+        <a href="#techniques" (click)="toggleMenu()">Habilidades Técnicas</a>
+      </li>
+      
+      <li [class.active]="tabMenuSelected === 'studies'">
+        <app-svg
+          name="{{ tabMenuSelected === 'studies' ? 'arrow-select' : 'star' }}"
+        />
+        <a href="#studies" (click)="toggleMenu()">Projetos de Estudo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <main>
-    <app-apresentacao />
-    <app-conhecimentos-tecnicos />
-    <app-experiencias />
-    <app-projetos />
+  <span #presentationRef>
+    <app-presentation id="presentation" />
+  </span>
+  <span #aboutRef>
+    <app-about-me  id="about"/>
+  </span>
+  <span #functionsRef>
+    <app-my-functions id="functions"/>
+  </span>
+  <span #careerRef>
+    <app-professional-career id="career"/>
+  </span>
+  <span #techniquesRef>
+    
+  </span>
+  <span #studiesRef>
+    
+  </span>
 </main>
-<footer>
-  <a class="github" href="https://github.com/Yancap" target="_blank">
-    GITHUB
-  </a>
-  <a class="linkedin" href="https://www.linkedin.com/in/yangabriel/" target="_blank">
-    LINKEDIN
-  </a>
-  <a class="cv" href="" download>
-    DOWNLOAD CV
-  </a>
-</footer>
+<footer></footer>

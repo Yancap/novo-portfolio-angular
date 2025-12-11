@@ -1,0 +1,9 @@
+div.jobs {
+
+
+  padding: 6rem;
+
+  @media (max-width: 768px) {
+    padding: 6rem 2rem;
+  }
+}

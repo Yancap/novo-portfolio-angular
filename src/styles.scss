@@ -1,35 +1,206 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: 'VT323', sans-serif;
 }
 
 html {
-  @media screen and (max-width: 952px) {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --dark-purple-900: #18191f;
+  --dark-purple-800: #1e2027;
+  --dark-purple-700: #404451;
+  --dark-purple-600: #444755;
+  --dark-purple-500: #4a4e5d;
+  --dark-purple-400: #63687b;
+  --dark-purple-300: #919ab7;
+  --dark-purple-200: #aeb8d6;
+  --dark-purple-100: #d0dafa;
+
+  --purple-900: #262233;
+
+  --purple-700: #4643f0;
+  --purple-500: #5653f4;
+  --purple-400: #7b79d9;
+  --purple-300: #9d9bf2;
+
+  --red-700: #9d1007;
+  --red-500: #c9352d;
+  --red-300: #f5746c;
+
+  --yellow-700: #925f00;
+  --yellow-500: #bc8401;
+  --yellow-300: #d8c25e;
+
+  --blue-700: #0058ac;
+  --blue-500: #0d77dd;
+  --blue-300: #5caffd;
+
+  --cornflower-blue-300: #8198db;
+
+  --green-700: #1cb358;
+  --green-500: #39df7b;
+  --green-300: #47f58c;
+}
+
+body {
+  background-color: var(--dark-purple-800);
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-main {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.font-display {
+  font-family: "Arima", sans-serif;
+}
+
+.content-page {
+  padding: 8rem 0;
+  margin: 0 auto;
+  max-width: 944px;
+  // @media (min-width: 1080px) {
+  //   padding: 8rem 4rem;
+  // }
+  // @media (min-width: 1440px) {
+  //   padding: 8rem 6rem;
+  // }
+
+  // @media (min-width: 1440px) {
+  //   padding: 8rem 10rem;
+  // }
+}
+
+.title-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1rem;
+  h1 {
+    font-family: "Arima", sans-serif;
+    text-transform: uppercase;
+    color: #dad8ea09;
+    font-size: 6rem;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: -4.5%;
+    // bottom: 30%;
+    // position: absolute;
+    @media (max-width: 764px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 400px) {
+      font-size: 3rem;
+    }
+  }
+
+  > div {
+    //position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    color: var(--dark-purple-100);
+    font-size: 3rem;
+    @media (max-width: 764px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  hr {
+    border: 1.5px solid var(--purple-500);
+    width: 50%;
+  }
+}
+
+// ul {
+//   list-style: none;
+// }
+
+.container {
+  width: 100%;
+  max-width: calc(100vw - 1.5rem);
+  padding: 0 0.75rem;
+  margin: 0 auto;
+  @media (min-width: 764px) {
+    margin: 0 auto;
+    max-width: 660px;
+    padding: 0;
+  }
+  @media (min-width: 880px) {
+    margin: 0 auto;
+    max-width: 764px;
+    padding: 0;
+  }
+  @media (min-width: 992px) {
+    margin: 0 auto;
+    max-width: 880px;
+    padding: 0;
+  }
+  @media (min-width: 1080px) {
+    margin: 0 auto;
+    max-width: 992px;
+    padding: 0;
+  }
+  @media (min-width: 1180px) {
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 0;
+  }
+  @media (min-width: 1280px) {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0 auto;
+    max-width: 1380px;
+    padding: 0;
+  }
+
+  @media (min-width: 1640px) {
+    margin: 0 auto;
+    max-width: 1480px;
+    padding: 0;
+  }
+
+  @media (min-width: 1920px) {
+    margin: 0 auto;
+    max-width: 1640px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
     font-size: 14px;
   }
 }
 
-h2.titulo-section {
-  font-size: 2.75rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #4DFEAD;
-  margin-bottom: 2rem;
-
-  @media screen and (max-width: 400px) {
-    font-size: 2.25rem;
-  }
-}
-
-.container {
-  max-width: 1128px;
-  margin: 0 auto;
-
-  @media screen and (max-width: 1158px) {
-    padding: 0 1rem;
+@media (max-width: 360px) {
+  html {
+    font-size: 12px;
   }
 }

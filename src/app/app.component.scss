@@ -1,100 +1,135 @@
 header {
-  background: #4DFEAD;
-  border: 1px solid #2B2837;
-  padding: .5rem 0;
-}
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--dark-purple-900);
+  height: 3rem;
+  width: 100%;
+  z-index: 5;
 
-nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
+  .container {
+    height: 100%;
+    padding: 0.5rem;
 
-div.container a {
-  text-decoration: none;
-  &:hover {
-    font-weight: 800;
+    display: flex;
+    align-items: center;
   }
 }
 
-a, h2 {
-  color: #2B2837;
-}
+nav {
+  display: none;
+  &.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
 
-h2 {
-  font-size: 1.75rem;
-  font-weight: 300;
-}
+    background: #5653f41e;
 
-div.container {
-  display: flex;
-  justify-content: space-between;
-}
+    animation: openMenuBlur 0.2s forwards;
+    z-index: 10;
+  }
 
-.relogio {
-  padding: .25rem .5rem;
-  background: #38FFC1;
-  border-radius: .15rem;
-  border-left: 1.5px solid #000;
-  border-top: 1.5px solid #000;
-  border-right: 1.5px solid #DAD8EA;
-  border-bottom: 1.5px solid #DAD8EA;
-  time {
-    font-size: 14px;
-    font-family: sans-serif;
+  .bg-menu {
+    position: fixed;
+    background: var(--dark-purple-900);
+    border-radius: 0 0 10rem 0;
+    z-index: 15;
+
+    animation: openMenu 0.2s forwards;
+  }
+
+  .return-menu {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+      cursor: pointer;
+
+      a {
+        font-family: "Arima", sans-serif;
+        font-weight: bold;
+        color: var(--dark-purple-100);
+      }
+
+      &:hover {
+        a {
+          color: var(--purple-500);
+        }
+      }
+      &.active {
+        a {
+          color: var(--purple-500);
+        }
+      }
+    }
   }
 }
 
 main {
-  background: #434050;
-  min-height: 100vh;
+  background: var(--dark-purple-800);
+  min-height: 300vh;
 }
 
-@media screen and (max-width: 500px) {
-  .relogio {
-    display: none;
+@keyframes openMenu {
+  from {
+    padding: 0rem 0rem 0rem 0rem;
   }
-  h2 {
-    font-size: 1.25rem;
+  to {
+    padding: 1.5rem 5rem 7rem 1.5rem;
   }
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
+@keyframes openMenuBlur {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(5px);
+  }
+}
 
-  a {
-    flex-grow: 1;
-    flex-shrink: 1;
-    min-width: 33.333%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem ;
-    color: #F7F6FF;
-    text-decoration: none;
-    font-size: 1.2rem;
-    @media screen and (max-width: 500px) {
-      font-size: 1rem;
+:host {
+  ::ng-deep {
+    app-svg.menu {
+      svg {
+        width: 1.5rem;
+        cursor: pointer;
+      }
     }
-  }
 
-  .github {
-    background: #4F4F4F;
-    &:hover {
-      background: #424242;
+    .return-menu {
+      svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        cursor: pointer;
+        path {
+          fill: var(--purple-500);
+        }
+      }
     }
-  }
-  .linkedin {
-    background: #75BDFF;
-    &:hover {
-      background: #5fa5e7;
+
+    .bg-menu li:hover {
+      svg path {
+        fill: var(--purple-500);
+      }
     }
-  }
-  .cv {
-    background: #FF5151;
-    &:hover {
-      background: #eb4343;
+
+    .bg-menu li.active {
+      a {
+        color: var(--purple-500);
+      }
+      svg path {
+        fill: var(--purple-500);
+      }
     }
   }
 }

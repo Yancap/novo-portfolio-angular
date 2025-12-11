@@ -1,0 +1,136 @@
+.bg-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.595);
+  z-index: 20;
+}
+.container-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3rem;
+
+  max-width: 990px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  background: var(--dark-purple-900);
+  border: 1px solid var(--purple-700);
+  border-radius: 0.5rem;
+
+  padding: 1rem;
+
+  &::-webkit-scrollbar-track {
+    //background-color: var(--dark-purple-800);
+    border-radius: 1000px;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--dark-purple-800);
+    border-radius: 1000px;
+    // border: 2px solid var(--purple-500);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--purple-500);
+    //width: 16px;
+    border-radius: 1000px;
+    border: 2px solid var(--dark-purple-800);
+  }
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+
+  app-svg {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.content {
+  padding: 2rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: "Arima", sans-serif;
+  color: white;
+  line-height: 1.3;
+}
+
+hr {
+  border: 2px solid var(--purple-500);
+  width: 6rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--dark-purple-100);
+}
+
+a {
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--blue-300);
+
+  transition: .2s;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--blue-500);
+  }
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: "Arima", sans-serif;
+  color: var(--purple-300);
+  margin-bottom: 0.25rem;
+}
+
+.container-techs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+:host {
+  ::ng-deep {
+    .container-techs svg {
+      width: 1.75rem;
+      max-height: 2rem;
+
+      path {
+        fill: var(--dark-purple-100);
+      }
+    }
+  }
+}

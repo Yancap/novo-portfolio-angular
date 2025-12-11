@@ -5,10 +5,16 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() titulo!: string;
-  @Input() descricao!: string;
-  @Input() tags!: string[];
+  @Input() data: {
+    title: string;
+    description: string;
+    tags: string[];
+  } = {
+    title: '',
+    description: '',
+    tags: []
+  };
 }

@@ -1,0 +1,42 @@
+<div class="bg-component">
+  <div class="container-component">
+    <header class="close">
+      <app-svg name="close" (click)="onClose()" />
+    </header>
+    <div class="content">
+      @for (project of jobProjects; track $index) {
+      <div class="project">
+        <div class="project-name">
+          <h2>{{ project.name }}</h2>
+          <hr />
+          <p>
+            {{ project.description }}
+          </p>
+        </div>
+        <div class="my-role">
+          <h4>Meu papel</h4>
+          <p>
+            {{ project.myActing }}
+          </p>
+        </div>
+        <div class="techs">
+          <h4>Tecnologias utilizadas</h4>
+          <div class="container-techs">
+            @for (tech of project.techs; track $index) {
+            <app-svg name="techs/{{ tech }}" />
+            }
+          </div>
+        </div>
+        <div class="links">
+          <h4>Links:</h4>
+          <div class="container-links">
+            @for (link of project.links; track $index) {
+              <a [href]="link.url">{{ link.name }}</a>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

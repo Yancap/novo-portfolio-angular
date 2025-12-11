@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="content-page">
+      <div class="title-page">
+        <h1>EXPERIÊNCIA</h1>
+        <div>
+          <h2>CARREIRA PROFISIONAL</h2>
+          <hr />
+        </div>
+      </div>
+
+      <div class="jobs">
+        @for (dataJob of dataJobList; track $index) {
+        <app-container-experience [dataJob]="dataJob" />
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { IconComponent } from '../icon/icon.component';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-card-projeto',
   standalone: true,
-  imports: [IconComponent],
+  imports: [SvgComponent],
   templateUrl: './card-projeto.component.html',
   styleUrl: './card-projeto.component.scss'
 })

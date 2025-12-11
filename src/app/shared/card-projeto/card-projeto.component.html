@@ -9,7 +9,7 @@
     </p>
     <div class="techs">
       @for (tecnologia of projeto.tecnologias.split(';'); track $index) {
-        <app-icon [icon]="tecnologia"/>
+        <app-svg [name]="tecnologia"/>
 
       }
     </div>

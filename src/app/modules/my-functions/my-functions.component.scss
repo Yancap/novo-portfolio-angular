@@ -1,0 +1,17 @@
+section {
+  background: var(--dark-purple-900);
+}
+
+.container-functions {
+  padding: 6rem 0;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 4rem;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

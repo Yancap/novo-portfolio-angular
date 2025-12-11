@@ -1,0 +1,26 @@
+<div class="container-experience">
+  <div class="icon-work">
+    <app-svg name="briefcase" />
+  </div>
+  <div class="title">
+    <h4 class="font-display">{{ dataJob.company }}</h4>
+    <span class="font-main">{{ dataJob.period }}</span>
+  </div>
+  <hr />
+  <div class="description">
+    <h5 class="font-display">{{ dataJob.role }}</h5>
+    @for (txt of dataJob.text; track $index) {
+    <p [innerHTML]="txt | safeHtml"></p>
+    }
+    <p class="technologies">
+      <strong>Tecnologias</strong>: {{ dataJob.technologies }} 
+    </p>
+    @if (dataJob.jobProjects) {
+      <div class="action">
+        <span> Venha conhecer os projetos que participei </span>
+        <app-button (click)="handleAction()"> Saiba mais </app-button>
+      </div>
+    }
+  </div>
+</div>
+<ng-template #projectJobsModal> </ng-template>

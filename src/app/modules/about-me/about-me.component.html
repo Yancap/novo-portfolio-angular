@@ -1,0 +1,63 @@
+<section>
+  <div class="container">
+    <div class="content-page">
+      <div class="title-page">
+        <h1>Quem sou eu?</h1>
+        <div>
+          <h2>Sobre mim</h2>
+          <hr />
+        </div>
+      </div>
+      <div class="container-about-me">
+        <div class="experience">
+          <h3 class="font-main">APPLICATION DEVELOPER at IBM</h3>
+          <p class="font-main">
+            Sou <strong>Desenvolvedor Fullstack</strong> com experiência no
+            desenvolvimento de soluções rápidas e escaláveis para o setor
+            bancário utilizando <strong>Java</strong> e
+            <strong>Angular</strong>.
+          </p>
+          <p class="font-main">
+            Atualmente trabalho para a <strong>IBM Consulting</strong> e atuo no
+            <strong>Banco do Brasil</strong>, especificamente para o
+            <strong>Tesouro Direto</strong>, onde participei no desenvolvimento
+            de produtos de <strong>grande relevância</strong> para o banco.
+          </p>
+          <app-button>
+            <a href="" target="_blank"> Download CV </a>
+          </app-button>
+        </div>
+
+        <div class="info-me">
+          <div class="info-card">
+            <h4>Nome</h4>
+            <p>Yan Gabriel Ferreira</p>
+            <hr />
+          </div>
+          <div class="info-card">
+            <h4>Idade</h4>
+            <p>22 Anos</p>
+            <hr />
+          </div>
+          <div class="info-card">
+            <h4>Localização</h4>
+            <p>Rio de Janeiro, RJ</p>
+            <hr />
+          </div>
+          <div class="info-card">
+            <h4>E-MAIL</h4>
+            <p>yangabriel3001f&#64;gmail.com</p>
+            <hr />
+          </div>
+        </div>
+      </div>
+
+      <div class="container-college">
+        @for (card of cards; track $index) {
+        <app-card [data]="card" />
+
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+button {
+  border-radius: 0.25rem;
+  border: 1px solid var(--purple-500);
+  outline: none;
+  background: var(--dark-purple-900);
+
+  color: var(--purple-500);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  cursor: pointer;
+  transition: 0.15s;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    outline: 1px solid var(--purple-700);
+    box-shadow: 0px 0px 4px var(--purple-500);
+  }
+  &:active {
+    box-shadow: 0px 0px 10px var(--purple-500);
+  }
+}
+
+.btn-md {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+:host {
+  ::ng-deep {
+    .btn-md a {
+      color: var(--purple-500) !important;
+    }
+    svg path {
+      fill: var(--purple-500);
+    }
+  }
+}
