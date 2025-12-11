@@ -3,5 +3,46 @@ section {
 }
 
 .container-techs {
-  
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  @media screen and (max-width: 350px) {
+    justify-content: space-between;
+  }
+}
+
+.tech-chip {
+  border-radius: 0.5rem;
+  background: var(--dark-purple-800);
+  border: 1px solid var(--purple-500);
+  padding: 0.5rem;
+  display: flex;
+  //flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 7rem;
+  height: 7rem;
+
+  span {
+    display: inline-block;
+    font-family: "Arima", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    color: var(--purple-500);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  &::ng-deep {
+    app-icon svg {
+      width: 3rem;
+      height: auto;
+      max-height: 3.5rem;
+    }
+  }
 }

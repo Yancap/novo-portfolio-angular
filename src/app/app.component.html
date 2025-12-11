@@ -40,13 +40,13 @@
         <a href="#career" (click)="toggleMenu()">Carreira Profissional</a>
       </li>
 
-      <li [class.active]="tabMenuSelected === 'techniques'">
+      <li [class.active]="tabMenuSelected === 'skills'">
         <app-svg
           name="{{
-            tabMenuSelected === 'techniques' ? 'arrow-select' : 'star'
+            tabMenuSelected === 'skills' ? 'arrow-select' : 'star'
           }}"
         />
-        <a href="#techniques" (click)="toggleMenu()">Habilidades Técnicas</a>
+        <a href="#skills" (click)="toggleMenu()">Habilidades Técnicas</a>
       </li>
       
       <li [class.active]="tabMenuSelected === 'studies'">
@@ -71,11 +71,11 @@
   <span #careerRef>
     <app-professional-career id="career"/>
   </span>
-  <span #techniquesRef>
-    
+  <span #skillsRef>
+    <app-skills  id="skills"/>
   </span>
   <span #studiesRef>
-    
+    <app-studies id="studies"/>
   </span>
 </main>
 <footer></footer>

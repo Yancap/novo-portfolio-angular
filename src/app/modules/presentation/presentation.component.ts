@@ -11,4 +11,8 @@ import { SvgComponent } from "../../shared/svg/svg.component";
 })
 export class PresentationComponent {
 
+
+  public navTo(url: string) {
+    
+  }
 }

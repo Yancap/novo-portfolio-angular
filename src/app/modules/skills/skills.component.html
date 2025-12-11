@@ -10,13 +10,12 @@
       </div>
 
       <div class="container-techs">
-        <div
-          class="tech-chip"
-          *ngFor="let skill of skills | async as list"
-        >
+        @for (skill of skills; track $index) {
+        <div class="tech-chip">
           <app-svg name="techs/{{ skill.icon }}" />
           <span>{{ skill.tech }}</span>
         </div>
+        }
       </div>
     </div>
   </div>

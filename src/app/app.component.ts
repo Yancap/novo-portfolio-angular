@@ -11,6 +11,8 @@ import { PresentationComponent } from './modules/presentation/presentation.compo
 import { AboutMeComponent } from './modules/about-me/about-me.component';
 import { MyFunctionsComponent } from './modules/my-functions/my-functions.component';
 import { ProfessionalCareerComponent } from './modules/professional-career/professional-career.component';
+import { SkillsComponent } from "./modules/skills/skills.component";
+import { StudiesComponent } from "./modules/studies/studies.component";
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,9 @@ import { ProfessionalCareerComponent } from './modules/professional-career/profe
     AboutMeComponent,
     MyFunctionsComponent,
     ProfessionalCareerComponent,
-  ],
+    SkillsComponent,
+    StudiesComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -42,8 +46,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('careerRef')
   careerRef!: ElementRef<HTMLDivElement>;
 
-  @ViewChild('techniquesRef')
-  techniquesRef!: ElementRef<HTMLDivElement>;
+  @ViewChild('skillsRef')
+  skillsRef!: ElementRef<HTMLDivElement>;
 
   @ViewChild('studiesRef')
   studiesRef!: ElementRef<HTMLDivElement>;
@@ -65,7 +69,7 @@ export class AppComponent implements AfterViewInit {
     const aboutOffsetTop = this.aboutRef.nativeElement.offsetTop;
     const functionsOffsetTop = this.functionsRef.nativeElement.offsetTop;
     const careerOffsetTop = this.careerRef.nativeElement.offsetTop;
-    const techniquesOffsetTop = this.techniquesRef.nativeElement.offsetTop;
+    const skillsOffsetTop = this.skillsRef.nativeElement.offsetTop;
     const studiesOffsetTop = this.studiesRef.nativeElement.offsetTop;
 
     if (
@@ -77,10 +81,10 @@ export class AppComponent implements AfterViewInit {
       this.tabMenuSelected = 'about';
     } else if (window.scrollY < careerOffsetTop) {
       this.tabMenuSelected = 'functions';
-    } else if (window.scrollY < techniquesOffsetTop) {
+    } else if (window.scrollY < skillsOffsetTop) {
       this.tabMenuSelected = 'career';
     } else if (window.scrollY < studiesOffsetTop) {
-      this.tabMenuSelected = 'techniques';
+      this.tabMenuSelected = 'skills';
     } else {
       this.tabMenuSelected = 'studies';
     }
