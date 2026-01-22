@@ -9,13 +9,18 @@
         </div>
       </div>
 
-      <div class="content">
-        <h4 class="font-display">Em construção....</h4>
-        <p class="font-main">
-          Estou atualizando os projetos antigos para novas versões, com novas
-          tecnologias e colocando em pratica meus novos conhecimentos. Em breve
-          postarei nessa sessão
-        </p>
+      <div class="container-projects">
+        <div class="left" (click)="selectLeft()">
+          <img src="/assets/svg/arrow-left.svg" alt="" srcset="" />
+        </div>
+        <div class="projects">
+          @for (projeto of projectListSelected; track $index) {
+            <app-card-project [projeto]="projeto" />
+          }
+        </div>
+        <div class="right" (click)="selectRight()">
+          <img src="/assets/svg/arrow-left.svg" alt="" srcset="" />
+        </div>
       </div>
     </div>
   </div>

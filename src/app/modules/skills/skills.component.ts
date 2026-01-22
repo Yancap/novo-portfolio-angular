@@ -22,7 +22,7 @@ export class SkillsComponent {
     {icon: 'redis', tech: 'redis'},
     {icon: 'sql', tech: 'sql'},
     {icon: 'javascript', tech: 'javascript'},
-    {icon: 'nodejs', tech: 'node'},
+    {icon: 'node', tech: 'node'},
     {icon: 'nestjs', tech: 'nest'},
     {icon: 'spring', tech: 'spring'},
     {icon: 'html-css', tech: 'html/css'},

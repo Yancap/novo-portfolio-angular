@@ -1,12 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { SafeHtmlPipe } from '../../core/pipes/safe-html/safe-html.pipe';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-svg',
   standalone: true,
   imports: [SafeHtmlPipe],
-  template: `<i class="svg-icon" [innerHTML]="svgContent | safeHtml"></i>`,
+  template: `
+    @if (svgContent !== null && svgContent !== '') {
+      <i class="svg-icon" [innerHTML]="svgContent | safeHtml"></i>
+    }
+  `,
   styleUrl: './svg.component.scss',
 })
 export class SvgComponent implements OnChanges {
@@ -20,6 +25,8 @@ export class SvgComponent implements OnChanges {
   }
 
   private getIcon(name: string) {
-    return this.http.get(`/assets/svg/${name}.svg`, { responseType: 'text' });
+    return this.http
+      .get(`/assets/svg/${name}.svg`, { responseType: 'text' })
+      .pipe(catchError(() => of('')));
   }
 }
