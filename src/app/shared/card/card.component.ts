@@ -8,11 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() data: {
-    title: string;
-    description: string;
-    tags: string[];
-  } = {
+  @Input() data: ICardComponentData = {
     title: '',
     description: '',
     tags: []

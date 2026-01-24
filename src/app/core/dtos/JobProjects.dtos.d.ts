@@ -3,8 +3,5 @@ declare interface JobProjects {
   description: string;
   myActing: string;
   techs: string[];
-  links: {
-    name: string;
-    url: string;
-  }[];
+  links: string[];
 }

@@ -6,10 +6,19 @@ declare interface IExperiencias {
   empresa: string;
   data_saida: string;
   cargos: {
-    cargo: string;
+    idcargo: number;
+    nomecargo: string;
     datafinal: null | string;
     datainicio: string;
-    descricao: string;
+    descricao: IRichText[];
     tecnologias: string;
+  }[];
+  projetoscargo: {
+    idcargo: number;
+    descricaoprojeto: string;
+    links: IRichText[];
+    minhafuncaoprojeto: string;
+    nomeprojeto: string;
+    tecnologiasicon: string;
   }[];
 }

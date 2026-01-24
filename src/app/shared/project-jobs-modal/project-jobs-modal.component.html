@@ -31,7 +31,7 @@
           <h4>Links:</h4>
           <div class="container-links">
             @for (link of project.links; track $index) {
-              <a [href]="link.url">{{ link.name }}</a>
+              <span [innerHTML]="link | safeHtml"></span>
             }
           </div>
         </div>

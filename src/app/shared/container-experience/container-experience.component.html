@@ -4,7 +4,17 @@
   </div>
   <div class="title">
     <h4 class="font-display">{{ dataJob.company }}</h4>
-    <span class="font-main">{{ dataJob.period }}</span>
+    <span class="font-main">
+      {{
+        dataJob.startDate | date: 'MMM yyyy'
+      }}
+      -
+      @if (dataJob.endDate)  {
+        {{ dataJob.endDate | date: 'MMM yyyy' }}
+      } @else {
+        {{ "Atualmente" }}
+      }
+    </span>
   </div>
   <hr />
   <div class="description">
@@ -15,7 +25,7 @@
     <p class="technologies">
       <strong>Tecnologias</strong>: {{ dataJob.technologies }} 
     </p>
-    @if (dataJob.jobProjects) {
+    @if (dataJob.jobProjects && dataJob.jobProjects.length > 0) {
       <div class="action">
         <span> Venha conhecer os projetos que participei </span>
         <app-button (click)="handleAction()"> Saiba mais </app-button>
